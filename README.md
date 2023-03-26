@@ -33,16 +33,10 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 The HealthTracker app was created by a team of 3 developers at the University of Minnesota.
 
 <a href="https://github.com/bhoomildayani182">Bhoomil Dayani</a>
-<p>Defined database architecture/models and developed data visualization charts to track height and weight measurements over time.</p>
-<br>
 
 <a href="https://github.com/RajBusa">Raj Busa</a>
-<p>Developed feature that allows attachments (for example, lab reports) to be uploaded to Amazon S3 and helped implement user authentication using Passport.js.</p>
-<br>
 
 <a href="https://github.com/jeelkanani">Jeel Kanani</a>
-<p>Developed user authentication using Passport.js, which ensures that a user is always authenticated when using the app and the user’s health information is protected.</p>
-<br>
 
 <!-- ## <a name="screenshots"></a> Screenshots
 
