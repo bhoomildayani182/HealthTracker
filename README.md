@@ -30,7 +30,7 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 <!-- <p>The slides from that presentation are available <a href="https://docs.google.com/presentation/d/10fSN9kcjoPq1m--SUcrzG1SD8DN-avFuZrVtKLj7_k8/edit?usp=sharing">here</a>.</p> -->
 
 ## <a name="contributors"></a>Contributors
-The HealthTracker app was created by a team of 3 developers at the University of Minnesota.
+The HealthTracker app was created by a team of 3 developers at the University of CHARUSAT.
 
 <a href="https://github.com/bhoomildayani182">Bhoomil Dayani</a>
 
