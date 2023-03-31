@@ -11,7 +11,22 @@ pipeline {
         booleanParam(name: 'executeTest', defaultValue : true, description: '')
     }
     
-      stage('deploy') {
+    stages {
+        stage('init'){
+            steps{
+                script{
+                    gv = load "script.groovy"
+                }
+            }
+        }
+        stage('config'){
+            steps{
+                script{
+                    gv.config()
+                }
+            }
+        }
+        stage('deploy') {
         
             steps {
                 script{echo 'deploying the application'
@@ -28,6 +43,7 @@ pipeline {
                 
              }
         }
+    }
 
     post{
         always{
