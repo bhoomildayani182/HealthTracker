@@ -66,9 +66,16 @@ class MedLog extends Component {
   // Loads all logs and saves them to this.state.logs.
   loadLogs = () => {
     MedLogAPI.getLogs()
+<<<<<<< HEAD
       .then(res =>{
         this.setState({ logs: res.data })
   })
+=======
+      .then(res => {
+        console.log(res.data)
+        this.setState({ logs: res.data })
+      })
+>>>>>>> 77d05f46a74fbf118284378af3988eace68fdddb
       .catch(err => console.log(err));
   };
 
@@ -89,7 +96,7 @@ class MedLog extends Component {
   };
 
   // Keep track of what user selects from doctor drop-down list so that input can be grabbed later
-    // If form validation error is showing, remove error from page when user starts typing.
+  // If form validation error is showing, remove error from page when user starts typing.
   handleLogDoctorChange = (event) => {
     this.setState({
       logDoctor: event.target.value,
@@ -114,7 +121,7 @@ class MedLog extends Component {
     this.setState({
       logVisitReason: event.target.value,
       logVisitReasonError: "",
-      formSuccessMessage: "", 
+      formSuccessMessage: "",
     });
   }
 
@@ -122,30 +129,30 @@ class MedLog extends Component {
     this.setState({
       logSex: event.target.value,
       logSexError: "",
-      formSuccessMessage: "", 
+      formSuccessMessage: "",
     });
   }
   handleLogAgeChange = (event) => {
-    this.setState({ 
+    this.setState({
       logAge: event.target.value,
       logAgeError: "",
-      formSuccessMessage: "", 
+      formSuccessMessage: "",
     });
   }
   // Keep track of what user types into height input field so that input can be grabbed later.
   // If form validation error is showing, remove error from page when user starts typing.
   handleLogHeightChange = (event) => {
-    this.setState({ 
+    this.setState({
       logHeight: event.target.value,
       logHeightError: "",
-      formSuccessMessage: "", 
+      formSuccessMessage: "",
     });
   }
 
   // Keep track of what user types into weight input field so that input can be grabbed later.
   // If form validation error is showing, remove error from page when user starts typing.
   handleLogWeightChange = (event) => {
-    this.setState({ 
+    this.setState({
       logWeight: event.target.value,
       logWeightError: "",
       formSuccessMessage: "",
@@ -155,11 +162,11 @@ class MedLog extends Component {
   // Keep track of what user types into notes input field so that input can be grabbed later
   // If form validation error is showing, remove error from page when user starts typing.
   handleLogNotesChange = (event) => {
-    this.setState({ 
+    this.setState({
       logNotes: event.target.value,
       logNotesError: "",
       formSuccessMessage: "",
-     });
+    });
   }
 
   // When user submits health log form, save health log inforation to database.
@@ -235,7 +242,7 @@ class MedLog extends Component {
         .catch(err => console.log(err));
 
       this.setState({
-          formSuccessMessage: `Doctor notes from ${this.state.logDate} added successfully!`,
+        formSuccessMessage: `Doctor notes from ${this.state.logDate} added successfully!`,
       });
 
       // Clear form
@@ -246,65 +253,65 @@ class MedLog extends Component {
   render() {
     const { classes } = this.props;
     return [
-      <NavBar />, 
+      <NavBar />,
       <div className={classes.appFrame}>
         <Sidebar />
-          <main className={classes.content}>
-            <div style={{ padding: 70 }}>
-              <Grid container spacing={24}>
-                <Grid item xs={12}>
-                  <Typography variant="display1" align="left">
-                    My health log
-                  </Typography>
+        <main className={classes.content}>
+          <div style={{ padding: 70 }}>
+            <Grid container spacing={24}>
+              <Grid item xs={12}>
+                <Typography variant="display1" align="left">
+                  My health log
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <div className="main-content-section">
+              <Grid container spacing={16}>
+                <Grid item xs={12} sm={12} md={6}>
+                  <LogForm
+                    doctors={this.state.doctors}
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleLogDateChange={this.handleLogDateChange}
+                    handleLogDoctorChange={this.handleLogDoctorChange}
+                    handleLogVisitReasonChange={this.handleLogVisitReasonChange}
+                    handleLogAgeChange={this.handleLogAgeChange}
+                    handleLogSexChange={this.handleLogSexChange}
+                    handleLogHeightChange={this.handleLogHeightChange}
+                    handleLogWeightChange={this.handleLogWeightChange}
+                    handleLogNotesChange={this.handleLogNotesChange}
+                    logDoctorError={this.state.logDoctorError}
+                    logDateError={this.state.logDateError}
+                    logVisitReasonError={this.state.logVisitReasonError}
+                    logSexError={this.state.logSexError}
+                    logAgeError={this.state.logAgeError}
+                    logHeightError={this.state.logHeightError}
+                    logWeightError={this.state.logWeightError}
+                    logNotesError={this.state.logNotesError}
+                    formSuccessMessage={this.state.formSuccessMessage} />
+                </Grid>
+
+                <Grid item xs={12} sm={12} md={6}>
+                  {this.state.logs.map(log => {
+                    return (
+                      <LogList
+                        id={log._id}
+                        key={log._id}
+                        date={log.date}
+                        doctor={log.doctor}
+                        visitPurpose={log.visitPurpose}
+                        ageIn={log.ageIn}
+                        sexIn={log.sexIn}
+                        heightIn={log.heightIn}
+                        weightLb={log.weightLb}
+                        visitNotes={log.notes}
+                        deleteLog={this.deleteLog}
+                      />
+                    );
+                  })}
                 </Grid>
               </Grid>
-             
-              <div className="main-content-section">
-                <Grid container spacing={16}>
-                  <Grid item xs={12} sm={12} md={6}>
-                    <LogForm
-                      doctors={this.state.doctors}
-                      handleFormSubmit={this.handleFormSubmit}
-                      handleLogDateChange={this.handleLogDateChange}
-                      handleLogDoctorChange={this.handleLogDoctorChange}
-                      handleLogVisitReasonChange={this.handleLogVisitReasonChange}
-                      handleLogAgeChange={this.handleLogAgeChange}
-                      handleLogSexChange={this.handleLogSexChange}
-                      handleLogHeightChange={this.handleLogHeightChange}
-                      handleLogWeightChange={this.handleLogWeightChange}
-                      handleLogNotesChange={this.handleLogNotesChange}
-                      logDoctorError={this.state.logDoctorError}
-                      logDateError = {this.state.logDateError}
-                      logVisitReasonError = {this.state.logVisitReasonError}
-                      logSexError = {this.state.logSexError}
-                      logAgeError = {this.state.logAgeError}
-                      logHeightError = {this.state.logHeightError}
-                      logWeightError = {this.state.logWeightError}
-                      logNotesError = {this.state.logNotesError}
-                      formSuccessMessage = {this.state.formSuccessMessage} />
-                  </Grid>
-                      
-                  <Grid item xs={12} sm={12} md={6}>
-                    {this.state.logs.map(log => {
-                      return (
-                        <LogList
-                          id={log._id}
-                          key={log._id}
-                          date={log.date}
-                          doctor={log.doctor}
-                          visitPurpose={log.visitPurpose}
-                          ageLb={log.ageLb}
-                          sexLb={log.sexLb}
-                          heightIn={log.heightIn}
-                          weightLb={log.weightLb}
-                          visitNotes={log.notes}
-                          deleteLog={this.deleteLog}
-                        />
-                      );
-                    })}  
-                  </Grid>
-                </Grid>
-              </div>
+            </div>
           </div>
         </main>
       </div>,
