@@ -50,6 +50,8 @@ class MedLog extends Component {
     logVisitReasonError: "",
     logHeightError: "",
     logWeightError: "",
+    logAgeError: "",
+    logSexError: "",
     logNotesError: "",
     formSuccessMessage: "",
   };
@@ -64,9 +66,9 @@ class MedLog extends Component {
   // Loads all logs and saves them to this.state.logs.
   loadLogs = () => {
     MedLogAPI.getLogs()
-      .then(res =>
+      .then(res =>{
         this.setState({ logs: res.data })
-      )
+  })
       .catch(err => console.log(err));
   };
 
@@ -89,7 +91,7 @@ class MedLog extends Component {
   // Keep track of what user selects from doctor drop-down list so that input can be grabbed later
     // If form validation error is showing, remove error from page when user starts typing.
   handleLogDoctorChange = (event) => {
-    this.setState({ 
+    this.setState({
       logDoctor: event.target.value,
       logDoctorError: "",
       formSuccessMessage: "",
@@ -99,7 +101,7 @@ class MedLog extends Component {
   // Keep track of what user enters into the log day input field so that input can be grabbed later.
   // If form validation error is showing, remove error from page when user starts typing.
   handleLogDateChange = (event) => {
-    this.setState({ 
+    this.setState({
       logDate: event.target.value,
       logDateError: "",
       formSuccessMessage: "",
@@ -109,7 +111,7 @@ class MedLog extends Component {
   // Keep track of what user types into reason for visit input field so that input can be grabbed later.
   // If form validation error is showing, remove error from page when user starts typing.
   handleLogVisitReasonChange = (event) => {
-    this.setState({ 
+    this.setState({
       logVisitReason: event.target.value,
       logVisitReasonError: "",
       formSuccessMessage: "", 
@@ -117,7 +119,7 @@ class MedLog extends Component {
   }
 
   handleLogSexChange = (event) => {
-    this.setState({ 
+    this.setState({
       logSex: event.target.value,
       logSexError: "",
       formSuccessMessage: "", 
