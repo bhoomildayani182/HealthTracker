@@ -24,6 +24,10 @@ const prescriptionSchema = new Schema({
     trim: true,
     required: 'Doctor prescribed is required',
   },
+  doctornote: {
+    type: String,
+    required: 'Doctor note is required',
+  },
   generalinstructions: {
     type: String,
     trim: true,

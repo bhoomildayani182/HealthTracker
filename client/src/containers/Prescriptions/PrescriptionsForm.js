@@ -172,6 +172,30 @@ class PrescriptionsForm extends React.Component {
               </FormControl>
 
               <FormControl className={classes.formControl} fullWidth>
+                <InputLabel htmlFor="doctor-note">
+                  <span>
+                    Doctor Note
+                    <Tooltip  
+                      title="Enter the Doctor note."
+                      placement="top">
+                      <IconButton> <i className="material-icons">help</i></IconButton>
+                    </Tooltip>
+                  </span>
+                </InputLabel>
+                <TextField
+                  id="doctor-note"
+                  type="text"
+                  className={classes.textField}
+                  InputLabelProps={{
+                      shrink: true,
+                  }}
+                  value={this.props.doctorNote}
+                  onChange={this.props.handleDoctorNoteChange}
+                />
+                <Typography className={classes.formError} component="p">{this.props.doctorAmount}</Typography>
+              </FormControl>
+
+              <FormControl className={classes.formControl} fullWidth>
                 <InputLabel htmlFor="prescription-directions">
                   <span>
                     Directions for use

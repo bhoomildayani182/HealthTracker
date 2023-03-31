@@ -33,24 +33,27 @@ class PrescriptionList extends React.Component {
     console.log("the prescription list is here but not working");
     const { classes } = this.props;
     return (
-        <Paper className={classes.root} elevation={4} id={this.props.id} key={this.props.key}>
-          <Typography component="p">
-            <b>Name:</b> {this.props.prescriptionName}
-          </Typography>
-          <Typography component="p">
-            <b>Prescribing doctor:</b> {this.props.prescriptionDoctor}
-          </Typography>
-          <Typography component="p">
-            <b>Date prescribed:</b> {this.props.prescriptionDate}
-          </Typography>
-          <Typography component="p">
-            <b>Amount:</b> {this.props.prescriptionAmount}
-          </Typography>
-          <Typography component="p">
-            <b>Directions for use:</b> {this.props.prescriptionDirections}
-          </Typography>
-          <Button size="small" color="primary" variant="raised" className={classes.button} onClick={() => { this.props.deletePrescription(this.props.id); }}>Remove</Button>
-        </Paper>
+      <Paper className={classes.root} elevation={4} id={this.props.id} key={this.props.key}>
+        <Typography component="p">
+          <b>Name:</b> {this.props.prescriptionName}
+        </Typography>
+        <Typography component="p">
+          <b>Prescribing doctor:</b> {this.props.prescriptionDoctor}
+        </Typography>
+        <Typography component="p">
+          <b>Date prescribed:</b> {this.props.prescriptionDate}
+        </Typography>
+        <Typography component="p">
+          <b>Amount:</b> {this.props.prescriptionAmount}
+        </Typography>
+        <Typography component="p">
+          <b>Doctor note:</b> {this.props.doctorNote}
+        </Typography>
+        <Typography component="p">
+          <b>Directions for use:</b> {this.props.prescriptionDirections}
+        </Typography>
+        <Button size="small" color="primary" variant="raised" className={classes.button} onClick={() => { this.props.deletePrescription(this.props.id); }}>Remove</Button>
+      </Paper>
     );
   }
 }
