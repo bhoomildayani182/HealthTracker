@@ -20,7 +20,7 @@ import Sidebar from '../../Components/Sidebar';
 // Style/Theme
 const styles = theme => ({
   appFrame: {
-    zIndex: 1,
+    Index: 1,
     overflow: 'hidden',
     position: 'relative',
     display: 'flex',

@@ -66,16 +66,12 @@ class MedLog extends Component {
   // Loads all logs and saves them to this.state.logs.
   loadLogs = () => {
     MedLogAPI.getLogs()
-<<<<<<< HEAD
-      .then(res =>{
-        this.setState({ logs: res.data })
-  })
-=======
+
       .then(res => {
         console.log(res.data)
         this.setState({ logs: res.data })
       })
->>>>>>> 77d05f46a74fbf118284378af3988eace68fdddb
+
       .catch(err => console.log(err));
   };
 

@@ -10,7 +10,7 @@ module.exports = {
       .catch(err => console.log('the findall doctor is not working in doctorscontroller.js error: ' + err));
         //res.status(422).json(err));
   },
-  findById: function (req, res) {
+  findById: function (req, res) {zz
     db.Doctor
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))

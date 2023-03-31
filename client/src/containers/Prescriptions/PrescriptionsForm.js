@@ -192,7 +192,7 @@ class PrescriptionsForm extends React.Component {
                   value={this.props.doctorNote}
                   onChange={this.props.handleDoctorNoteChange}
                 />
-                <Typography className={classes.formError} component="p">{this.props.doctorAmount}</Typography>
+                <Typography className={classes.formError} component="p">{this.props.doctorNote}</Typography>
               </FormControl>
 
               <FormControl className={classes.formControl} fullWidth>
