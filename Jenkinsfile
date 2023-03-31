@@ -1,6 +1,15 @@
 #!/usr/bin/env groovy
 
 pipeline {
+    agent any
+    environment {
+        NEW_VERSION = '1.3'
+    }
+
+    parameters {
+        choice(name: 'VERSION', choices:['1'], description: '')
+        booleanParam(name: 'executeTest', defaultValue : true, description: '')
+    }
     
       stage('deploy') {
         
