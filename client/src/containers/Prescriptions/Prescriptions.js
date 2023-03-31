@@ -241,6 +241,7 @@ class Prescriptions extends Component {
                     prescriptionDoctorError={this.state.prescriptionDoctorError}
                     prescriptionDateError={this.state.prescriptionDateError}
                     prescriptionAmountError={this.state.prescriptionAmountError}
+                    doctorNoteError={this.state.doctorNoteError}
                     handleDoctorNoteError={this.state.handleDoctorNoteError}
                     prescriptionDirectionsError={this.state.prescriptionDirectionsError}
                     formSuccessMessage={this.state.formSuccessMessage}
@@ -256,7 +257,7 @@ class Prescriptions extends Component {
                         prescriptionDoctor={prescription.doctorprescribed}
                         prescriptionDate={prescription.dateprescribed}
                         prescriptionAmount={prescription.amount}
-                        doctoreNote={prescription.doctoreNote}
+                        doctorNote={prescription.doctornote}
                         prescriptionDirections={prescription.generalinstructions}
                         deletePrescription={this.deletePrescription}
                       />
