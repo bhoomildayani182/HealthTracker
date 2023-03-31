@@ -38,6 +38,8 @@ class MedLog extends Component {
     logDoctor: "",
     logDate: "",
     logVisitReason: "",
+    logSex: "",
+    logAge: "",
     logHeight: "",
     logWeight: "",
     logNotes: "",
@@ -114,6 +116,20 @@ class MedLog extends Component {
     });
   }
 
+  handleLogSexChange = (event) => {
+    this.setState({ 
+      logSex: event.target.value,
+      logSexError: "",
+      formSuccessMessage: "", 
+    });
+  }
+  handleLogAgeChange = (event) => {
+    this.setState({ 
+      logAge: event.target.value,
+      logAgeError: "",
+      formSuccessMessage: "", 
+    });
+  }
   // Keep track of what user types into height input field so that input can be grabbed later.
   // If form validation error is showing, remove error from page when user starts typing.
   handleLogHeightChange = (event) => {
@@ -169,17 +185,27 @@ class MedLog extends Component {
       })
     }
 
+    if (this.state.logSex === "") {
+      this.setState({
+        logHeightError: "Enter a value for height (in ft)."
+      })
+    }
+    if (this.state.logAge === "") {
+      this.setState({
+        logHeightError: "Enter a value for height (in ft)."
+      })
+    }
     // if the height field is empty when user submits form, show error.
     if (this.state.logHeight === "") {
       this.setState({
-        logHeightError: "Enter a value for height (in inches)."
+        logHeightError: "Enter a value for height (in ft)."
       })
     }
 
     // if the weight field is empty when user submits form, show error.
     if (this.state.logWeight === "") {
       this.setState({
-        logWeightError: "Enter a value for weight (in pounds)."
+        logWeightError: "Enter a value for weight (in kg)."
       })
     }
 
@@ -197,6 +223,8 @@ class MedLog extends Component {
         date: this.state.logDate,
         doctor: this.state.logDoctor,
         visitPurpose: this.state.logVisitReason,
+        sexIn: this.state.logSex,
+        ageIn: this.state.logAge,
         heightIn: this.state.logHeight,
         weightLb: this.state.logWeight,
         notes: this.state.logNotes,
@@ -238,12 +266,16 @@ class MedLog extends Component {
                       handleLogDateChange={this.handleLogDateChange}
                       handleLogDoctorChange={this.handleLogDoctorChange}
                       handleLogVisitReasonChange={this.handleLogVisitReasonChange}
+                      handleLogAgeChange={this.handleLogAgeChange}
+                      handleLogSexChange={this.handleLogSexChange}
                       handleLogHeightChange={this.handleLogHeightChange}
                       handleLogWeightChange={this.handleLogWeightChange}
                       handleLogNotesChange={this.handleLogNotesChange}
                       logDoctorError={this.state.logDoctorError}
                       logDateError = {this.state.logDateError}
                       logVisitReasonError = {this.state.logVisitReasonError}
+                      logSexError = {this.state.logSexError}
+                      logAgeError = {this.state.logAgeError}
                       logHeightError = {this.state.logHeightError}
                       logWeightError = {this.state.logWeightError}
                       logNotesError = {this.state.logNotesError}
@@ -259,6 +291,8 @@ class MedLog extends Component {
                           date={log.date}
                           doctor={log.doctor}
                           visitPurpose={log.visitPurpose}
+                          ageLb={log.ageLb}
+                          sexLb={log.sexLb}
                           heightIn={log.heightIn}
                           weightLb={log.weightLb}
                           visitNotes={log.notes}

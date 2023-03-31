@@ -146,11 +146,57 @@ class LogForm extends React.Component {
                 />
                 <Typography className={classes.formError} component="p">{this.props.logVisitReasonError}</Typography>
               </FormControl>
+              
+              <FormControl className={classes.formControl} fullWidth>
+                <InputLabel htmlFor="Sex">
+                  <span>
+                    Sex (Male/Female) 
+                    <Tooltip  
+                      title="Enter the Sex measurement taken at the doctor's office."
+                      placement="top">
+                      <IconButton> <i className="material-icons">help</i></IconButton>
+                    </Tooltip>
+                  </span></InputLabel>
+                <TextField
+                  id="Sex"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
+                  className={classes.textField}
+                  value={this.props.logSex}
+                  onChange={this.props.handleLogSexChange}
+                />
+                <Typography className={classes.formError} component="p">{this.props.logSexError}</Typography>
+              </FormControl>
+
+              <FormControl className={classes.formControl} fullWidth>
+                <InputLabel htmlFor="Age">
+                  <span>
+                    Age (Year) 
+                    <Tooltip  
+                      title="Enter the Age measurement taken at the doctor's office."
+                      placement="top">
+                      <IconButton> <i className="material-icons">help</i></IconButton>
+                    </Tooltip>
+                  </span></InputLabel>
+                <TextField
+                  id="Age"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
+                  className={classes.textField}
+                  value={this.props.logAge}
+                  onChange={this.props.handleLogAgeChange}
+                />
+                <Typography className={classes.formError} component="p">{this.props.logAgeError}</Typography>
+              </FormControl>
 
               <FormControl className={classes.formControl} fullWidth>
                 <InputLabel htmlFor="height">
                   <span>
-                    Height (inches) 
+                    Height (Ft) 
                     <Tooltip  
                       title="Enter the height measurement taken at the doctor's office."
                       placement="top">
@@ -173,7 +219,7 @@ class LogForm extends React.Component {
               <FormControl className={classes.formControl} fullWidth>
                 <InputLabel htmlFor="weight">
                   <span>
-                    Weight (pounds) 
+                    Weight (kg) 
                     <Tooltip  
                       title="Enter the weight measurment taken at the doctor's office."
                       placement="top">

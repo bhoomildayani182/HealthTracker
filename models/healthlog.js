@@ -42,6 +42,14 @@ const HealthLogSchema = new Schema({
     type: Number,
     trim: true,
   },
+  sexIn: {
+    type: String,
+    trim: true,
+  },
+  ageIn: {
+    type: Number,
+    trim: true,
+  },
   // `date` must be of type Date. The default value is the current date
   userCreated: {
     type: Date,
