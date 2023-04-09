@@ -7,7 +7,7 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 <!-- * [Live](#live) -->
 * [Presentation](#presentation)
 * [Contributors](#contributors)
-<!-- * [Screenshots](#screenshots) -->
+* [Screenshots](#screenshots)
 * [About this project](#about-this-project)
   * [How the app is built](#how-the-app-is-built)
   * [Structure of the project](#project-structure)
@@ -25,20 +25,18 @@ HealthTracker is a MERN stack application that allows you to log and keep track 
 
 
 ## <a name="presentation"></a>Presentation
-<p>The app present at the University of CHARUSAT University organize GeekForGeek Hackethon on 2023.</p>
+<p>The app present at the University of CHARUSAT University organize GeekForGeek Hackethon on 2023 also SGP (SEM6).</p>
 
 <!-- <p>The slides from that presentation are available <a href="https://docs.google.com/presentation/d/10fSN9kcjoPq1m--SUcrzG1SD8DN-avFuZrVtKLj7_k8/edit?usp=sharing">here</a>.</p> -->
 
 ## <a name="contributors"></a>Contributors
-The HealthTracker app was created by a team of 3 developers at the University of CHARUSAT.
+The HealthTracker app was created by a team of 2 developers at the University of CHARUSAT.
 
 <a href="https://github.com/bhoomildayani182">Bhoomil Dayani</a>
 
 <a href="https://github.com/RajBusa">Raj Busa</a>
 
-<a href="https://github.com/jeelkanani">Jeel Kanani</a>
-
-<!-- ## <a name="screenshots"></a> Screenshots
+ ## <a name="screenshots"></a> Screenshots
 
 ### Login page
 
@@ -46,7 +44,7 @@ The HealthTracker app was created by a team of 3 developers at the University of
 
 ### Sign up page
 
-<img src="./readme_images/signup2.png">
+<img src="./readme_images/signup.png">
 
 ### Home page
 
@@ -82,7 +80,7 @@ The HealthTracker app was created by a team of 3 developers at the University of
 
 ### 404 Not found page
 
-<img src="./readme_images/notfound.png"> -->
+<img src="./readme_images/notfound.png">
 
 ## <a name="about-this-project"></a> About this project
 Many people have frequent doctor visits (sometimes more than once per week), but they lack a system for accurately and effectively keeping track of their health data, including upcoming appointments, prescriptions, symptoms they experience outside of the doctor's office, doctor's notes, height and weight measurements, and symptom-specific information.
@@ -165,8 +163,6 @@ After you clone the repository, navigate to the project root directory (MedLog).
 ## <a name="getting-started"></a> Getting started
 
 The following section will take you through the steps of setting up this app and getting it running locally on your computer.
-
-<!-- If you don't want to set up this project locally and just want to see the deployed application, go to <https://myhealthtracker.herokuapp.com/>. -->
 
 To set up this application locally on your computer, perform the following steps:
   1. [Clone the repository](#clone-repository)
@@ -260,7 +256,48 @@ For more information about yarn and other installation options, see the yarn doc
 
 <p>After the development server has started, a Chrome browser window should open, and you should see the login screen for the application. If the browser does not automatically open after the server starts, you can verify that the application is working locally on your computer by opening Chrome and going to <a href="http://localhost:3000">http://localhost:3000</a>.
 
-<!-- ## <a name="deployment"></a> Deploying the app -->
+## <a name="deployment"></a> Deploying the app
+
+* [CI/CD Pipeline](#CI/CDPipeline)
+
+### <a name ="CI/CDPipeline"></a> CI/CD Pipeline
+
+* Create ec2 Instance on AWS
+
+![image](https://user-images.githubusercontent.com/98962947/230754600-3bd02d04-caf5-41d9-a3e1-fd0906e364be.png)
+
+* Install Docker on ec2
+
+![image](https://user-images.githubusercontent.com/98962947/230754687-3c382a13-2967-4807-96f5-deca3f4ccb9e.png)
+
+* Install Jenkins on ec2 and Run on port :8080 and Download all the plugins
+
+![image](https://user-images.githubusercontent.com/98962947/230754718-36553c55-ab56-461c-9d88-327e4001cb4a.png)
+
+* Craete a Job on jenkins
+ 
+![image](https://user-images.githubusercontent.com/98962947/230754778-896af7a8-7ef0-46a3-939f-f13c6bde2364.png)
+
+* Configure Job (Connect with Github and also add Some Credentials Github and Docker Hub)
+
+![image](https://user-images.githubusercontent.com/98962947/230754862-b4f1f30a-82fd-406e-9913-35e51c8dbade.png)
+
+* Connect With Github-Webhook
+
+![image](https://user-images.githubusercontent.com/98962947/230754899-a0f2f666-fe9b-4e93-85f7-a84c7f7217c4.png)
+
+
+* Add the some configuration command on job execute shall
+
+![image](https://user-images.githubusercontent.com/98962947/230754978-61fca09e-016d-4e90-9dbc-13c4bb56dd15.png)
+
+* Now Job is Ready to deploy (Create some change and after commit on the local machine) Automatically Build this Job
+
+![image](https://user-images.githubusercontent.com/98962947/230755061-7c988c33-85f0-4ee7-b04f-13b4134c4b51.png)
+
+* Project Completely Runnig on our ec2 instance (Deploy) (ec2ip:3000)
+
+![image](https://user-images.githubusercontent.com/98962947/230755127-16d02d4d-7fda-47f0-b9ae-12b7ed7171e9.png)
 
 
 
