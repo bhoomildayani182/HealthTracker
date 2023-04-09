@@ -40,47 +40,44 @@ The HealthTracker app was created by a team of 2 developers at the University of
 
 ### Login page
 
-<img src="./readme_images/login.png">
+![login](https://user-images.githubusercontent.com/98962947/230755313-880b4f60-f068-43a7-90dd-bd361239c16f.png)
 
 ### Sign up page
 
-<img src="./readme_images/signup.png">
+![signup](https://user-images.githubusercontent.com/98962947/230755387-abe73de8-9fb4-4d41-94ee-88e1cf833766.png)
 
 ### Home page
 
-<img src="./readme_images/home.png">
+![home](https://user-images.githubusercontent.com/98962947/230755303-067c22dd-f2bf-4ec9-81c6-8e657b1d6554.png)
 
 ### My health log
 
-<img src="./readme_images/health_log.png">
+![health_log](https://user-images.githubusercontent.com/98962947/230755294-5cca5430-d1ed-4261-99b6-5831a212b148.png)
 
 ### My symptom journal
 
-<img src="./readme_images/symptom_journal.png">
+![symptom_journal](https://user-images.githubusercontent.com/98962947/230755398-20362718-72a3-4d02-8ff6-83e6a7c8cb76.png)
 
 ### Appointments
 
-<img src="./readme_images/appointments.png">
+![appointments](https://user-images.githubusercontent.com/98962947/230755266-b76bc4da-ccf9-4a8f-9dda-4c8fa59f0657.png)
 
 ### Prescriptions
 
-<img src="./readme_images/prescriptions.png">
+![prescriptions](https://user-images.githubusercontent.com/98962947/230755365-168ebd65-621c-4e22-8e4e-a0e6d23e9391.png)
 
 ### Doctors list
 
-<img src="./readme_images/doctors.png">
+![doctors](https://user-images.githubusercontent.com/98962947/230755288-3e713c82-8936-4fd6-921c-86534368a92e.png)
 
 ### Clinics list
 
-<img src="./readme_images/clinics.png">
+![clinics](https://user-images.githubusercontent.com/98962947/230755283-273a6fe2-7f97-423a-ba9a-4f3ea5d866fb.png)
 
 ### Charts
 
-<img src="./readme_images/charts.png">
+![charts](https://user-images.githubusercontent.com/98962947/230755274-3fb0cff9-a880-4945-b518-0cd116857c7e.png)
 
-### 404 Not found page
-
-<img src="./readme_images/notfound.png">
 
 ## <a name="about-this-project"></a> About this project
 Many people have frequent doctor visits (sometimes more than once per week), but they lack a system for accurately and effectively keeping track of their health data, including upcoming appointments, prescriptions, symptoms they experience outside of the doctor's office, doctor's notes, height and weight measurements, and symptom-specific information.
