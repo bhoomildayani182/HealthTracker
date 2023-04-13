@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
         <Card className={classes.root}>
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2" align="center">
-            LOGIN
+            LOGIN1
             </Typography>
             <Typography gutterBottom component="p" align="center">
             Enter your HealthTracker credentials to LOG IN or click SIGN UP to create an account.
