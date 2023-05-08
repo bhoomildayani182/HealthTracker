@@ -1,19 +1,7 @@
-
-
 pipeline{
     agent any
-    options{
-        buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
-        timestamps()
-    }
-    environment{
-        
-        // registry = "<dockerhub-username>/<repo-name>"
-        // registryCredential = '<dockerhub-credential-name>'        
-    }
-    
     stages{
-       stage('Building image') {
+       stage('Building image'){
       steps{
         script {
           withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
@@ -22,6 +10,7 @@ pipeline{
             sh "docker push ${USERNAME}/helthtracker"
         }
       }
+    }
     }
        stage('Deploy Image') {
       steps{
@@ -33,6 +22,5 @@ pipeline{
         }
       }
     }
-}
 }
 }
