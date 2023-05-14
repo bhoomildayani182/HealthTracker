@@ -2,8 +2,8 @@ pipeline{
     agent any
     stages{
        stage('Building image'){
-      steps{
-        script {
+        steps{
+          script {
           withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
             sh "docker build -t ${USERNAME}/helthtracker  ."
             sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
