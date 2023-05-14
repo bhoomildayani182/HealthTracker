@@ -5,6 +5,9 @@ pipeline{
         steps{
           script {
           withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+            sh "docker commit HelthTracker bhoomildayani182/helthtracker"
+            sh "docker kill HelthTracker"
+            sh "docker container rm HelthTracker"
             sh "docker build -t ${USERNAME}/helthtracker  ."
             sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
             sh "docker push ${USERNAME}/helthtracker"
