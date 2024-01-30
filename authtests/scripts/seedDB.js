@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const db = require('../models');
 
 mongoose.Promise = global.Promise;
-//MONGO_URL = "mongodb+srv://bhoomildayani182:G6PQZst71S7vYzJE@cluster1.lad4l0x.mongodb.net/test"
- mongoose.connect("mongodb+srv://bhoomildayani182:G6PQZst71S7vYzJE@cluster1.lad4l0x.mongodb.net/test");
-
+//MONGO_URL = 'mongodb://localhost:27017'
+const connectionString = 'mongodb://localhost:27017'
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 // || process.env.MONGODB_URI
-// mongodb+srv://bhoomildayani182:G6PQZst71S7vYzJE@cluster1.lad4l0x.mongodb.net/test
+// mongodb://localhost:27017

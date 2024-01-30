@@ -84,17 +84,12 @@ app.get('/populateduser', function (req, res) {
 });
 
 // Connect to the Mongo DB
- mongoose.connect("mongodb+srv://bhoomildayani182:G6PQZst71S7vYzJE@cluster1.lad4l0x.mongodb.net/test");
 
 // If deployed, use the deployed database. Otherwise use the local reacthealthtracker database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reacthealthtracker";
-
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
+//var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reacthealthtracker";
+const connectionString = 'mongodb://localhost:27017'
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
-});
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // configurePassport
 const configurePassport = require('./controllers/passport')

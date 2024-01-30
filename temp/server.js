@@ -81,8 +81,8 @@ app.get('/populateduser', function (req, res) {
 });
 
 // Connect to the Mongo DB
- mongoose.connect("mongodb+srv://bhoomildayani182:G6PQZst71S7vYzJE@cluster1.lad4l0x.mongodb.net/test");
-
+const connectionString = 'mongodb://localhost:27017'
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // configurePassport
 const configurePassport = require('./controllers/passport')
