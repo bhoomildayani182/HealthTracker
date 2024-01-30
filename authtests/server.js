@@ -74,7 +74,7 @@ app.get('/user', function (req, res) {
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || '');
-const connectionString = 'mongodb://localhost:27017'
+const connectionString = 'mongodb+srv://bhoomildayani182:TPb6XdgKa2sm38hY@cluster0.kck3zgu.mongodb.net/'
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);

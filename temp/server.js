@@ -81,7 +81,7 @@ app.get('/populateduser', function (req, res) {
 });
 
 // Connect to the Mongo DB
-const connectionString = 'mongodb://localhost:27017'
+const connectionString = 'mongodb+srv://bhoomildayani182:TPb6XdgKa2sm38hY@cluster0.kck3zgu.mongodb.net/'
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // configurePassport

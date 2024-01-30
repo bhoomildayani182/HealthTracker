@@ -87,7 +87,7 @@ app.get('/populateduser', function (req, res) {
 
 // If deployed, use the deployed database. Otherwise use the local reacthealthtracker database
 //var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reacthealthtracker";
-const connectionString = 'mongodb://localhost:27017'
+const connectionString = 'mongodb+srv://bhoomildayani182:TPb6XdgKa2sm38hY@cluster0.kck3zgu.mongodb.net/'
 mongoose.Promise = Promise;
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
