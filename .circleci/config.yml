@@ -33,5 +33,5 @@ workflows:
           context:
             - prod-context
           filters:
-            branches:s
+            branches:
               only: main
