@@ -10,8 +10,8 @@ jobs:
           name: Print environment variables
           command: |
             echo "Running on branch: ${CIRCLE_BRANCH}"
-            echo "DB_HOST is $DB_HOST"
-            echo "API_KEY is $API_KEY"
+            if [ -n "$DB_HOST" ]; then echo "✅ DB_HOST is set: $DB_HOST"; else echo "❌ DB_HOST is not set"; fi
+            if [ -n "$API_KEY" ]; then echo "✅ API_KEY is set"; else echo "❌ API_KEY is not set"; fi
       # Add your build/deploy steps here
       - run:
           name: Dummy deploy
