@@ -1,0 +1,37 @@
+version: 2.1
+
+jobs:
+  build-and-deploy:
+    docker:
+      - image: cimg/node:20.5.1  # use your preferred image
+    steps:
+      - checkout
+      - run:
+          name: Print environment variables
+          command: |
+            echo "Running on branch: ${CIRCLE_BRANCH}"
+            echo "DB_HOST is $DB_HOST"
+            echo "API_KEY is $API_KEY"
+      # Add your build/deploy steps here
+      - run:
+          name: Dummy deploy
+          command: |
+            echo "Deploying to ${CIRCLE_BRANCH} environment..."
+
+workflows:
+  version: 2
+  build-deploy-workflow:
+    jobs:
+      - build-and-deploy:
+          context:
+            - dev-context
+          filters:
+            branches:
+              only: develop
+
+      - build-and-deploy:
+          context:
+            - prod-context
+          filters:
+            branches:s
+              only: main
